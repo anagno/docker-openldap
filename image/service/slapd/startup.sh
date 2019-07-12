@@ -44,7 +44,6 @@ file_env 'LDAP_READONLY_USER_PASSWORD'
 
 # fix file permissions
 if [ "${DISABLE_CHOWN,,}" == "false" ]; then
-  echo "TEST!!!!"
   chown -R openldap:openldap /var/lib/ldap
   chown -R openldap:openldap /etc/ldap
   chown -R openldap:openldap ${CONTAINER_SERVICE_DIR}/slapd

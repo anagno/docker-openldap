@@ -15,6 +15,9 @@ test:
 tag-latest:
 	docker tag $(NAME):$(VERSION) $(NAME):latest
 
+tag:
+	docker tag $(NAME):$(VERSION) $(NAME):$(VERSION)
+
 push:
 	docker push $(NAME):$(VERSION)
 

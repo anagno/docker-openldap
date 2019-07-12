@@ -47,7 +47,10 @@ load test_helper
   wait_process slapd
   run docker exec $CONTAINER_ID ldapsearch -x -h ldap.osixia.net -b dc=example,dc=org -ZZ -D "cn=admin,dc=example,dc=org" -w strongPassword
   clear_container
-  rm $PWD/password.txt
+
+  if [ -f "$PWD/password.txt" ];then
+    rm $PWD/password.txt
+  fi
 
   [ "$status" -eq 0 ]
 }
